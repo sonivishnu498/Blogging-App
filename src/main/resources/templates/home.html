@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Personal Blog - Home</title>
+</head>
+<body>
+<h1>Welcome to My Blog</h1>
+<ul>
+    <th:block th:each="article : ${articles}">
+        <li>
+            <a th:href="@{'/article/' + ${article.id}}" th:text="${article.title}">Title</a>
+            <span> - </span>
+            <span th:text="${article.publishDate}">Date</span>
+        </li>
+    </th:block>
+</ul>
+<a href="/login">Admin Login</a>
+</body>
+</html>

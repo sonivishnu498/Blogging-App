@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>New Article</title>
+</head>
+<body>
+<h1>New Article</h1>
+<form method="post" action="/admin/new">
+  <label>Title: <input type="text" name="title" th:value="${article.title}" /></label><br>
+  <label>Date: <input type="date" name="publishDate" th:value="${article.publishDate}" /></label><br>
+  <label>Content:<br>
+    <textarea name="content" th:text="${article.content}"></textarea>
+  </label><br>
+  <button type="submit">Publish</button>
+</form>
+<a href="/admin">Back to Dashboard</a>
+</body>
+</html>
